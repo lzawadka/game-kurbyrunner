@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="/js/libs/oxo.js"></script>
+  <script defer src="/js/script.js"></script>
+  <link rel="stylesheet" href="/scss/styles.scss">
+  <title>Kirby Runner - Game Over</title>
+</head>
+
+<body class="end">
+  <div class="fadein">
+    <h1 class="end__title">YOU DIED</h1>
+    <h2 class="end__restart"><a class="link" href="/screens/game.html">Press Space to Restart</a></h2>
+    <div class='score__data--end'>Your score :</div>
+    <img class="sad_kirby" src="/img/sad-kirby.png" alt="sad_kirby">
+  </div>
+  <div data-oxo-score class="score__data--end"></div>
+  <img class="kirbysplash" src="/img/kirby__screen.gif" alt="">
+<audio autoplay src="/sounds/Sound_GameOver.mp3"></audio>  
+</body>
+</html>

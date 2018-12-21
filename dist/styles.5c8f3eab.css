@@ -1,0 +1,609 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+/* HOME */
+.home {
+  width: 100vw;
+  height: 100vh;
+  background: pink;
+  overflow: hidden;
+  background-size: cover auto; }
+
+.home__title {
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center; }
+
+h2 {
+  margin-top: 50px;
+  padding: 10px;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  font-weight: bold; }
+
+p {
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center; }
+
+.gameplay__title {
+  margin: 10px auto; }
+
+.gameplay {
+  margin: 0px 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: white; }
+
+.gameplay__instructions {
+  position: absolute;
+  margin-top: 10px;
+  font-weight: bold; }
+
+.gameplay__starter {
+  animation: wobble 1s ease-in-out infinite alternate;
+  margin-top: 10vh; }
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.5); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+.ground-home {
+  position: fixed;
+  bottom: 0vh;
+  left: 0;
+  width: 100vw; }
+
+.idle {
+  position: fixed;
+  left: 50px;
+  bottom: 100px; }
+
+.homeportal {
+  position: fixed;
+  right: -6vw;
+  bottom: 180px; }
+
+/* GAME */
+.container__character {
+  height: 100px;
+  width: 100px;
+  transition: 0.5s;
+  z-index: 10;
+  bottom: 0%;
+  background-image: url("kirby.392af8d4.gif"); }
+
+.ground__dark--is-collided {
+  width: 100vw;
+  height: 150px;
+  top: 0;
+  background: url("dark-ground.d9c90977.png");
+  background-size: cover;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 111111s linear infinite;
+  position: fixed; }
+
+.ground__pink {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: url("pink-ground.b69af411.png");
+  background-size: 160vh;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 111119s linear infinite;
+  position: fixed; }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: url("Kirby_background-1280_TWISTER.8abca570.png");
+  background-size: cover;
+  background-color: #ffadec;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 999999s linear infinite;
+  /* Adjust timing here according to speed required */
+  position: absolute;
+  z-index: -1; }
+  .containerimg:nth-of-type(1) {
+    position: absolute;
+    width: 20vw;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+/*.darkWorld .ground__dark {
+  background: url('/img/Dark_background-1280-TWISTER.png');
+}*/
+@-webkit-keyframes backgroundScroll {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -99999999px 0; } }
+
+@keyframes backgroundScroll {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -99999999px 0; } }
+
+/* flip screen */
+.flip__state--second {
+  top: 15%;
+  position: absolute;
+  -moz-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  transform: rotateX(180deg);
+  z-index: 2;
+  height: 10em;
+  width: 10em; }
+
+.background__state--second {
+  position: absolute;
+  transform: rotateX(180deg);
+  z-index: -5;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+.obstacle1 {
+  background-image: url(pink-crystal_1.45165233.png);
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 20%;
+  right: -100px;
+  display: inline-block; }
+
+.score__title {
+  float: left;
+  margin-top: 30%;
+  margin-left: 10px;
+  width: 200px;
+  height: 70px;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999999;
+  opacity: 0.5; }
+
+.score__data {
+  float: left;
+  margin-top: 30%;
+  margin-left: 20px;
+  width: 100px;
+  height: 70px;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999999;
+  opacity: 0.5; }
+
+.obstacle2 {
+  background-image: url("pink-rock_3.ff268bcd.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 13%;
+  right: -1000px;
+  display: inline-block; }
+
+.obstacle3 {
+  background-image: url("pink-portal.6ad3a3ef.gif");
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 20%;
+  right: -5900px;
+  margin-top: 5%;
+  display: inline-block; }
+
+.obstacle4 {
+  background-image: url(pink-cactus_3.51115c3c.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 13%;
+  right: -2000px;
+  display: inline-block; }
+
+.obstacle5 {
+  background-image: url(pink-rock_2.b886e8c5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 14%;
+  right: -3000px;
+  display: inline-block; }
+
+.obstacle6 {
+  background-image: url(pink-crystal_4.3b650349.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 14%;
+  right: -4000px;
+  display: inline-block; }
+
+/*.obstacle7 {
+  background-image: url(/img/pink-rock_1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 13%;
+  right: -4400px;
+  display: inline-block;
+}
+
+.obstacle8 {
+  background-image: url(/img/pink-cactus_3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 12%;
+  right: -4200px;
+  display: inline-block;
+}*/
+.obstacle10 {
+  background-image: url(bat.f0ad9dc3.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 24%;
+  right: -7100px;
+  display: inline-block; }
+
+.obstacle11 {
+  background-image: url("dark-dragon.a6370954.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 24%;
+  right: -8700px; }
+
+.obstacle12 {
+  background-image: url("dark-spike_2.0aaf9de0.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 2%;
+  right: -9600px; }
+
+.obstacle13 {
+  background-image: url("dark-rock_1.3379891e.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 2%;
+  right: -10300px; }
+
+.obstacle14 {
+  background-image: url("bat.f0ad9dc3.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 27%;
+  right: -11100px; }
+
+.obstacle15 {
+  background-image: url("dark-portal.c6c9eb91.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 16%;
+  right: -11500px; }
+
+/* END */
+html {
+  width: 100%; }
+
+.end {
+  background-image: url("cemetary.ddc79207.png"); }
+
+.end__title {
+  margin-top: 280px;
+  display: flex;
+  justify-content: center;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: red; }
+
+.end__restart {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: red;
+  text-align: center; }
+
+.score__data--end {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: red;
+  text-align: center; }
+
+.sad_kirby {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  height: auto;
+  width: 20%; }
+
+.fadein {
+  opacity: 0;
+  animation: fadein 4s linear 2.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.kirbysplash {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  animation: fadeout 2.5s ease-out 3s;
+  animation-fill-mode: forwards; }
+
+@keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.link {
+  color: #FF8000;
+  text-decoration: none; }
+
+.cemetary {
+  opacity: 0.2; }
+
+/*Credits*/
+.credit__page {
+  font-family: 'arial','Times New Roman', Times, serif; }
+
+.ground__credit {
+  position: fixed;
+  bottom: 0vh;
+  left: 0vw;
+  width: 100vw;
+  z-index: -6; }
+
+.kirby__kiss {
+  position: fixed;
+  right: 40vw;
+  bottom: 20px;
+  transform: scale(0.4); }
+
+.congrats {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center; }
+
+.credits {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: pink; }
+
+.congratulation {
+  font-size: 40px; }
+
+.fireworks-1 {
+  position: fixed;
+  left: 55%;
+  top: 20%; }
+
+.fireworks-2 {
+  position: fixed;
+  left: 15%;
+  top: 20%; }
+
+.fireworks-3 {
+  position: fixed;
+  left: 35%;
+  top: 10%; }
+
+.restarter {
+  position: fixed;
+  font-size: 30px;
+  font-weight: bolder;
+  right: 38%;
+  bottom: 1vh; }
+
+.link {
+  text-decoration: none;
+  color: pink; }
+
+@font-face {
+  font-family: "Kirby";
+  src: url("kirby-classic.c97de274.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ChauPhilomene";
+  src: url("ChauPhilomeneOne-Regular.3670f938.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("Cinzel-Regular.c098b09a.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }

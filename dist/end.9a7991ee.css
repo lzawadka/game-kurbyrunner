@@ -1,0 +1,44 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  transform: rotate 0.5; }
+
+.end {
+  width: 100vw;
+  height: 100vh;
+  transform: rotate 0.5;
+  background: #232323; }
+
+.end__title {
+  margin-top: 280px;
+  display: flex;
+  justify-content: center;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: red; }
+
+.end__restart {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: red;
+  text-align: center; }
+
+.score {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: red;
+  text-align: center; }
+
+.score__data--end {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: red;
+  text-align: center; }
