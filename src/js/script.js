@@ -105,6 +105,16 @@ function game() {
   
   timeScore();
 
+//character
+
+character = oxo.elements.createElement({
+  // crée le santa
+  class: "character",
+  styles: {
+    transform: "translate(50px, 549px)" // positionne le santa sur le sol
+  }
+});
+
 
 //move of the character
 
